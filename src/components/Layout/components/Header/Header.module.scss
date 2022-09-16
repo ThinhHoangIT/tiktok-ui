@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 var(--default-layout-horizontal-space);
 }
 
 input:not(:placeholder-shown) ~ .search-btn {
@@ -99,9 +100,33 @@ input:not(:placeholder-shown) ~ .search-btn {
     }
 }
 
+// Action
+.actions {
+    display: flex;
+    align-items: center;
+}
+
 .more-btn {
     font-size: 2rem;
     background-color: transparent;
     margin-left: 28px;
     padding: 4px 8px;
+    cursor: pointer;
+}
+
+.actions-btn {
+    font-size: 2rem;
+    padding: 4px 12px;
+    color: #161823;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
 }
