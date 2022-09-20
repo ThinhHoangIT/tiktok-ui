@@ -12,7 +12,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
+import routeConfig from '~/config/route';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Button from '~/components/Button';
@@ -93,10 +95,12 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routeConfig.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="TikTok" />
-                </div>
+                </Link>
+
                 <Search />
+
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
@@ -129,7 +133,7 @@ function Header() {
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/50498c73b2bed5ec85480314f0d21d12~c5_100x100.jpeg?x-expires=1663430400&x-signature=qUr8KNQ8oCN9t7UZJxpGpbH7uxY%3D"
                                 alt="Nguyen Van A"
-                                fallback="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/f485490f970a0c1ccbf158b9e468450b~c5_100x100.jpeg?x-expires=1663495200&x-signature=s2NYg9Y86y8O%2FUE8bZovCZiAuHM%3D"
+                                fallback="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/274989350_101083842531200_8777420342982006359_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=CxhtCgYQ9OgAX9eN2gP&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT8h4sp-4WAjOilIeAOFmAwfyxkNbmt6TVTHfDV6wxK25w&oe=632E3E65"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
