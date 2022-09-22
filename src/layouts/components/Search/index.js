@@ -4,12 +4,12 @@ import { faCircleXmark, faCircleNotch } from '@fortawesome/free-solid-svg-icons'
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
 import { useDebounce } from '~/hooks';
-import styles from '~/components/Layout/components/Search/Search.module.scss';
+import styles from '~/layouts/components/Search/Search.module.scss';
 
 const cx = classNames.bind(styles);
 
