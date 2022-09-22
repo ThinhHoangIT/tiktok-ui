@@ -7,7 +7,7 @@ const Image = forwardRef(({ src, alt, className, fallback: customFallback = imag
     const [fallback, setFallback] = useState('');
 
     const handleError = () => {
-        setFallback(images.noImage);
+        setFallback(customFallback);
     };
     return (
         <img
@@ -21,6 +21,11 @@ const Image = forwardRef(({ src, alt, className, fallback: customFallback = imag
     );
 });
 
-Image.propTypes = {};
+Image.propTypes = {
+    src: PropTypes.string,
+    alt: PropTypes.string,
+    class: PropTypes.string,
+    fallback: PropTypes.string,
+};
 
 export default Image;

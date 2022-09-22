@@ -63,7 +63,7 @@ function Button({
     );
 }
 
-Button.prototypes = {
+Button.propTypes = {
     to: PropTypes.string,
     href: PropTypes.string,
     primary: PropTypes.bool,
