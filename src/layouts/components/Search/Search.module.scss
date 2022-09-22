@@ -21,6 +21,7 @@ input:not(:placeholder-shown) ~ .search-btn {
         color: var(--black);
         font-size: 1.6rem;
         height: 100%;
+        padding-right: 40px;
         caret-color: var(--primary);
         background-color: transparent;
         font-family: var(--font-family);
