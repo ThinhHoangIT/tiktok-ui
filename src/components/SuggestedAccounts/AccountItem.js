@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,15 +7,16 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountPreview from './AccountPreview/AccountPreview';
 import styles from './SuggestedAccounts.module.scss';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
-function AccountItem() {
+function AccountItem({ data }) {
     const renderPreview = (props) => {
         return (
             <div tabIndex="-1" {...props}>
                 <PopperWrapper>
-                    <AccountPreview />
+                    <AccountPreview data={data} />
                 </PopperWrapper>
             </div>
         );
@@ -24,17 +26,13 @@ function AccountItem() {
         <div>
             <Tippy interactive delay={[800, 0]} offset={[-20, 0]} placement="bottom" render={renderPreview}>
                 <div className={cx('account-item')}>
-                    <img
-                        className={cx('avatar')}
-                        src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/f89b316574f8f0ab300e20d4b7ff6a29~c5_100x100.jpeg?x-expires=1664128800&x-signature=uGFf20MSEkeIDDqoWr6gu7y2w9s%3D"
-                        alt=""
-                    />
+                    <Image className={cx('avatar')} src={data.avatar} alt={data.nickname} />
                     <div className={cx('item-info')}>
                         <p className={cx('nickname')}>
-                            <strong>thinhhoang.dev</strong>
-                            <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                            <strong>{data.nickname}</strong>
+                            {data.tick && <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />}
                         </p>
-                        <p className={cx('name')}>Thịnh Hoàng 🐶</p>
+                        <p className={cx('name')}>{`${data.first_name} ${data.last_name}`}</p>
                     </div>
                 </div>
             </Tippy>
@@ -42,6 +40,8 @@ function AccountItem() {
     );
 }
 
-AccountItem.propTypes = {};
+AccountItem.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default AccountItem;

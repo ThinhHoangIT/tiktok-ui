@@ -131,9 +131,9 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/50498c73b2bed5ec85480314f0d21d12~c5_100x100.jpeg?x-expires=1663988400&x-signature=YFF4tub6gRIC5LE%2FNnpACA95bwE%3D"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/02599c3cebb541c41db8e2c061e47308~c5_100x100.jpeg?x-expires=1664686800&x-signature=GPKlVzST82KIp9F5mlG5euvJTbw%3D"
                                 alt="Nguyen Van A"
-                                fallback="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/274989350_101083842531200_8777420342982006359_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=CxhtCgYQ9OgAX9eN2gP&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT8h4sp-4WAjOilIeAOFmAwfyxkNbmt6TVTHfDV6wxK25w&oe=632E3E65"
+                                // fallback
                             />
                         ) : (
                             <button className={cx('more-btn')}>
