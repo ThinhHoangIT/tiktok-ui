@@ -19,7 +19,7 @@ const cx = classNames.bind(styles);
 
 function Sidebar() {
     const [suggestedUsers, setSuggestedUsers] = useState([]);
-    const [followingUsers, setFollowingUsers] = useState([]);
+    // const [followingUsers, setFollowingUsers] = useState([]);
 
     useEffect(() => {
         userService
@@ -29,12 +29,12 @@ function Sidebar() {
             })
             .catch((error) => console.log(error));
 
-        userService
-            .getFollowing()
-            .then((data) => {
-                setFollowingUsers(data);
-            })
-            .catch((error) => console.log(error));
+        // userService
+        //     .getFollowing()
+        //     .then((data) => {
+        //         setFollowingUsers(data);
+        //     })
+        //     .catch((error) => console.log(error));
     }, []);
 
     return (
@@ -51,7 +51,7 @@ function Sidebar() {
             </Menu>
 
             <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} />
-            <SuggestedAccounts label="Following accounts" data={followingUsers} />
+            <SuggestedAccounts label="Following accounts" data={suggestedUsers} />
         </aside>
     );
 }

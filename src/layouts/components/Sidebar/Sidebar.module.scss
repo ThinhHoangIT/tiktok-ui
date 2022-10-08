@@ -1,5 +1,14 @@
 .wrapper {
     width: 356px;
     padding: 20px 0 26px 8px;
+    box-shadow: 1px rgba(0, 0, 0, 0.06);
     margin-left: -18px;
+    overflow-y: hidden;
+    &:hover {
+        overflow-y: scroll;
+    }
+}
+
+.wrapper::-webkit-scrollbar {
+    width: 6px;
 }

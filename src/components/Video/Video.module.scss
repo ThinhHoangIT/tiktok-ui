@@ -1,0 +1,7 @@
+.wrapper {
+    padding: 20px 0;
+
+    & ~ * {
+        border-top: 1px solid #e3e3e4;
+    }
+}
