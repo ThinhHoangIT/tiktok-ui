@@ -45,7 +45,6 @@ function VideoContent({ data }) {
         <div className={cx('wrapper')}>
             <div className={cx('video')}>
                 <video ref={videoRef} onClick={handleVideo} src={data.file_url} loop />
-                {/* controls */}
             </div>
             <div className={cx('content')}>
                 <button className={cx('btn-icon')}>
