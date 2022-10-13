@@ -44,7 +44,7 @@ function VideoContent({ data }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('video')}>
-                <video controls ref={videoRef} onClick={handleVideo} src={data.file_url} loop />
+                <video ref={videoRef} onClick={handleVideo} src={data.file_url} loop />
                 {/* controls */}
             </div>
             <div className={cx('content')}>
